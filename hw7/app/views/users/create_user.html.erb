@@ -1,0 +1,16 @@
+<% form_tag(create_user_path, method: ‘post’) do %>
+
+<% label tag(:first_name, ‘First Name’) %>
+<% text_field_tag(:first_name %>
+
+<% label tag(:last_name, ‘Last Name’) %>
+<% text_field_tag(:last_name %>
+
+<%= email_field(:user, :address) %>
+<input id="user_address" name="user[address]" type="email" />
+
+<%= password_field_tag(:password) %>
+<input id="password" name="password" type="password" />
+	
+	<%= submit_tag(‘Submit’) %>
+<%end>

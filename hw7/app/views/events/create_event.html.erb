@@ -1,0 +1,16 @@
+<% form_tag(create_event_path, method: ‘post’) do %>
+
+<% label tag(:name, ‘Name’) %>
+<% text_field_tag(:name %>
+
+<% label tag(:description, Description’) %>
+<% text_field_tag(:description %>
+
+<% label_tag(:start_date, ‘Starts on’) %>
+<% text_field_tag(:start_date) %>
+
+<% label_tag(:end_date, End on’) %>
+<% text_field_tag(:end_date) %>
+	
+	<%= submit_tag(‘Submit’) %>
+<%end>

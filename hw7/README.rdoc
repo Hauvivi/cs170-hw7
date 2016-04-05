@@ -1,0 +1,46 @@
+== CS 270 Assignment 7
+Vivien Hau
+
+In this assignment, we'll finish coding all the views except for the 'show location'
+action. In doing so, we'll complete the bulk of our business logic necessary for
+the app to function properly.
+
+<b>Step 1 - 'Create New' Actions</b>
+
+First, we need to split the creation process across two separate controller actions:
+
+e.g.
+
+<tt>def new_event</tt>
+
+<tt>end</tt>
+
+<tt>def create_event</tt>
+
+<tt>end</tt>
+
+In the <tt>new_event/user/location</tt> action, you simply need to render a form
+using the Rails <tt>form_tag</tt> helper.  This form will need to redirect to the
+<tt>create_event/user/location</tt> action using the POST request method.
+
+In order for these actions to operate properly, you will also need to update the 
+routes file accordingly.
+
+The <tt>create_event/user/location</tt> action needs to create a new object using
+the appropriate model method, and then you need to save that object to the database,
+checking to see if the save was successful.  If it was successful, then redirect
+to the show page for that particular object, otherwise, redirect to the root page.
+
+<b>Step 2 - 'Edit' Actions</b>
+
+In order to edit an existing object, the process is almost identical, with two exceptions:
+
+First, in the <tt>edit_event/user/location</tt>, you first need to retrieve the particular
+object from the database before rendering the form.
+
+Second, instead of using the generic <tt>form_tag</tt> helper, you need to use the Rails
+<tt>form_for</tt> helper in order to bind the form to that specific object that you 
+retrieved from the database.
+
+So, at the end of this phase, you should have the capability to run the Rails test
+server and create and edit new objects for events, locations, and users.
